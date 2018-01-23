@@ -5,9 +5,9 @@ from mycroft.skills.core import MycroftSkill
 import requests
 
 
-class BitcoinSkill(MycroftSkill):
+class MyskillSkill(MycroftSkill):
     def __init__(self):
-        super(BitcoinSkill, self).__init__(name="BitcoinSkill")
+        super(BitcoinSkill, self).__init__(name="MySkill")
 
     def initialize(self):
         self.load_vocab_files(join(dirname(__file__), 'vocab', 'en-us'))
@@ -16,7 +16,7 @@ class BitcoinSkill(MycroftSkill):
         prefixes = ['cortana', 'cortana price']
         self.__register_prefixed_regex(prefixes, "(?P<Word>\w+)")
 
-        intent = IntentBuilder("BitcoinIntent").require("BitcoinKeyword").require("Word").build()
+        intent = IntentBuilder("MyIntent").require("MyKeyword").require("Word").build()
         self.register_intent(intent, self.handle_intent)
 
     def __register_prefixed_regex(self, prefixes, suffix_regex):
