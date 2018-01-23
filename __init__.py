@@ -1,11 +1,13 @@
-'''
 from os.path import dirname, join
-
 from adapt.intent import IntentBuilder
 from mycroft.skills.core import MycroftSkill
 import requests
+from os.path import dirname, join
+from mycroft.util.log import getLogger
+from mycroft.util import play_mp3
+import random
 
-
+'''
 class MyskillSkill(MycroftSkill):
     def __init__(self):
         super(BitcoinSkill, self).__init__(name="MySkill")
@@ -53,14 +55,7 @@ def create_skill():
 # You should have received a copy of the GNU General Public License
 # along with Mycroft Core.  If not, see <http://www.gnu.org/licenses/>.
 
-from os.path import dirname, join
 
-from adapt.intent import IntentBuilder
-from mycroft.skills.core import MycroftSkill
-from mycroft.util.log import getLogger
-from mycroft.util import play_mp3
-
-import random
 
 __author__ = 'Willem Ligtenberg'
 
